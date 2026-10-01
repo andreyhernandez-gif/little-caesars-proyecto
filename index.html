@@ -1,13 +1,2440 @@
-<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#f56600"><title>Little Caesars - Mi cuenta</title>
-<style>*{box-sizing:border-box}body{margin:0;font-family:Arial;background:#eee;color:#292929}.app{max-width:520px;min-height:100vh;margin:auto;background:#fff;padding-bottom:78px}header{background:#f56600;color:#fff;height:90px;display:flex;align-items:center;padding:12px 20px;gap:12px}header img{width:70px;height:65px;object-fit:contain}header b{font-size:22px}.page{display:none;padding:24px 20px}.page.on{display:block}h1{margin:0 0 5px}.muted{color:#777}.hero{background:#f56600;color:#fff;border-radius:14px;padding:22px;margin:20px 0}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:18px 0}.stat,.card{background:#fafafa;border:1px solid #e5e5e5;border-radius:12px;padding:15px}.stat{text-align:center}.stat strong{display:block;color:#f56600;font-size:24px;margin:5px}.card{margin:11px 0}.order{display:flex;justify-content:space-between;gap:12px}.oid{color:#f56600;font-weight:bold;font-size:12px}.price{font-weight:bold;font-size:19px}.badge{background:#e7f6eb;color:#288f4b;padding:5px 8px;border-radius:12px;font-size:11px}.loyalty{width:100%;margin:10px 0}.center{text-align:center}.big{font-size:46px;color:#f56600;font-weight:bold}.bar{height:13px;background:#ddd;border-radius:20px;overflow:hidden;margin:20px}.bar span{display:block;width:83.33%;height:100%;background:#f56600}.reward{background:#fff0e5;border:1px solid #ffd0ae;border-radius:12px;text-align:center;padding:17px}.profile{text-align:center}.profile img{width:150px;max-height:130px;object-fit:contain}.tag{background:#fff0e5;color:#d94f00;padding:7px 13px;border-radius:14px;font-weight:bold}.note{font-size:10px;color:#888;text-align:center;margin-top:25px}nav{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:min(520px,100%);height:70px;background:#242424;display:grid;grid-template-columns:repeat(4,1fr)}nav button{border:0;background:#242424;color:white;font-weight:bold}nav button.on{background:#f56600}nav span{display:block;font-size:20px}</style></head>
-<body><div class="app"><header><img src="logo_little_caesars.png"><b>LITTLE CAESARS</b></header>
-<section id="inicio" class="page on"><h1>¡Hola, Andrey!</h1><p class="muted">Bienvenido a tu cuenta Little Caesars</p><div class="hero"><h2>¡Estás muy cerca de tu recompensa!</h2><p>Te falta solo 1 compra para completar tu tarjeta.</p></div><div class="stats"><div class="stat">★<strong>320</strong><small>Puntos</small></div><div class="stat">🍕<strong>5/6</strong><small>Sellos</small></div><div class="stat">🎁<strong>2</strong><small>Recompensas</small></div></div><h2>Último pedido</h2><div class="card order"><div><div class="oid">#LC245678</div><h3>Pizza Pepperoni</h3><span class="muted">Pizza Grande + Refresco 2L</span></div><div class="price">$248.00</div></div><p class="note">Prototipo desarrollado exclusivamente con fines académicos. No representa una aplicación oficial de Little Caesars.</p></section>
-<section id="pedidos" class="page"><h1>Mis pedidos</h1><p class="muted">Consulta tus compras recientes</p>
-<div class="card order"><div><div class="oid">#LC245678</div><h3>Pizza Pepperoni</h3><span class="muted">Pizza Grande + Refresco 2L<br>04 sep. 2026</span></div><div><span class="badge">Entregado</span><p class="price">$248.00</p></div></div>
-<div class="card order"><div><div class="oid">#LC243912</div><h3>Crazy Bread®</h3><span class="muted">8 piezas + Salsa Marinara<br>28 ago. 2026</span></div><div><span class="badge">Entregado</span><p class="price">$129.00</p></div></div>
-<div class="card order"><div><div class="oid">#LC241556</div><h3>Pizza Hawaiana</h3><span class="muted">Pizza Grande + Refresco 2L<br>20 ago. 2026</span></div><div><span class="badge">Entregado</span><p class="price">$238.00</p></div></div>
-<div class="card order"><div><div class="oid">#LC238771</div><h3>Pizza Meat Lovers</h3><span class="muted">Pizza Mediana + Crazy Bread®<br>12 ago. 2026</span></div><div><span class="badge">Entregado</span><p class="price">$199.00</p></div></div></section>
-<section id="fidelidad" class="page"><h1>Programa de fidelidad</h1><p class="muted">Completa tu tarjeta y recibe una recompensa</p><img class="loyalty" src="tarjeta_fidelidad.png"><div class="card center"><h2>Tu progreso</h2><div class="big">5/6</div><span class="muted">sellos acumulados</span><div class="bar"><span></span></div><b>¡Solo falta 1 compra!</b></div><div class="reward">🎁<h3 style="color:#d94f00">Próxima recompensa</h3><b>Pizza gratis</b></div></section>
-<section id="perfil" class="page"><h1>Mi perfil</h1><p class="muted">Información de tu cuenta Little Caesars</p><div class="card profile"><img src="logo_little_caesars.png"><h2>Andrey Hernández</h2><p class="muted">andrey@email.com</p><span class="tag">Cliente fiel</span></div><div class="stats"><div class="stat"><strong>320</strong><small>Puntos</small></div><div class="stat"><strong>5/6</strong><small>Sellos</small></div><div class="stat"><strong>2</strong><small>Recompensas</small></div></div></section>
-<nav><button class="on" onclick="go('inicio',this)"><span>⌂</span>Inicio</button><button onclick="go('pedidos',this)"><span>🍕</span>Pedidos</button><button onclick="go('fidelidad',this)"><span>★</span>Fidelidad</button><button onclick="go('perfil',this)"><span>●</span>Perfil</button></nav></div>
-<script>function go(id,b){document.querySelectorAll('.page').forEach(x=>x.classList.remove('on'));document.getElementById(id).classList.add('on');document.querySelectorAll('nav button').forEach(x=>x.classList.remove('on'));b.classList.add('on');scrollTo(0,0)}</script></body></html>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#F56600">
+
+<title>Little Caesars | Prototipo</title>
+
+<style>
+
+:root {
+    --naranja: #F56600;
+    --naranja-oscuro: #D94F00;
+    --negro: #222222;
+    --gris: #737373;
+    --gris-claro: #F5F5F5;
+    --borde: #E7E7E7;
+    --blanco: #FFFFFF;
+    --verde: #278B4E;
+    --naranja-suave: #FFF1E7;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #EEEEEE;
+    color: var(--negro);
+}
+
+button {
+    font-family: inherit;
+}
+
+/* ========================================
+   APP
+======================================== */
+
+.app {
+    width: 100%;
+    max-width: 520px;
+    min-height: 100vh;
+    margin: auto;
+    background: white;
+    padding-bottom: 90px;
+    overflow: hidden;
+}
+
+/* ========================================
+   HEADER
+======================================== */
+
+.header {
+    background: var(--naranja);
+    color: white;
+    padding: 12px 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.marca {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.marca img {
+    width: 58px;
+    height: 58px;
+    object-fit: contain;
+}
+
+.marca small {
+    font-size: 9px;
+    letter-spacing: 2px;
+}
+
+.marca strong {
+    font-size: 17px;
+}
+
+.avatar {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: white;
+    color: var(--naranja);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+/* ========================================
+   PANTALLAS
+======================================== */
+
+.pantalla {
+    display: none;
+    padding: 22px 18px 30px;
+}
+
+.pantalla.activa {
+    display: block;
+}
+
+.etiqueta {
+    color: var(--naranja);
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+}
+
+h1 {
+    font-size: 28px;
+    margin: 6px 0;
+}
+
+h2 {
+    font-size: 20px;
+}
+
+.gris {
+    color: var(--gris);
+}
+
+/* ========================================
+   BANNER
+======================================== */
+
+.banner {
+    position: relative;
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--naranja),
+            var(--naranja-oscuro)
+        );
+
+    color: white;
+
+    padding: 23px;
+
+    border-radius: 22px;
+
+    margin-top: 20px;
+}
+
+.banner::after {
+    content: "🍕";
+
+    position: absolute;
+
+    right: -10px;
+    bottom: -28px;
+
+    font-size: 100px;
+
+    opacity: .15;
+
+    transform: rotate(-15deg);
+}
+
+.banner h2 {
+    font-size: 23px;
+    margin: 8px 0;
+}
+
+.banner p {
+    max-width: 280px;
+    line-height: 1.4;
+}
+
+.badge {
+    display: inline-block;
+
+    background: white;
+
+    color: var(--naranja-oscuro);
+
+    padding: 5px 10px;
+
+    border-radius: 20px;
+
+    font-size: 10px;
+
+    font-weight: bold;
+}
+
+.boton-blanco {
+
+    background: white;
+
+    color: var(--naranja);
+
+    border: none;
+
+    padding: 12px 17px;
+
+    border-radius: 12px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    margin-top: 5px;
+}
+
+/* ========================================
+   ESTADÍSTICAS
+======================================== */
+
+.estadisticas {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 9px;
+
+    margin: 18px 0;
+}
+
+.estadistica {
+
+    border: 1px solid var(--borde);
+
+    background: #FAFAFA;
+
+    border-radius: 16px;
+
+    padding: 14px 5px;
+
+    text-align: center;
+}
+
+.estadistica .icono {
+    font-size: 23px;
+}
+
+.estadistica strong {
+
+    display: block;
+
+    font-size: 23px;
+
+    color: var(--naranja);
+
+    margin: 5px 0;
+}
+
+.estadistica small {
+    color: var(--gris);
+}
+
+/* ========================================
+   PROMO
+======================================== */
+
+.promocion {
+
+    border: 1px solid #FFD0AD;
+
+    background: var(--naranja-suave);
+
+    border-radius: 18px;
+
+    padding: 17px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 10px;
+}
+
+.promocion strong {
+
+    color: var(--naranja-oscuro);
+
+    font-size: 18px;
+}
+
+.pizza-grande {
+    font-size: 50px;
+}
+
+/* ========================================
+   CATEGORÍAS
+======================================== */
+
+.categorias {
+
+    display: flex;
+
+    gap: 8px;
+
+    overflow-x: auto;
+
+    padding: 5px 0 10px;
+}
+
+.categoria {
+
+    border: 1px solid var(--borde);
+
+    background: white;
+
+    border-radius: 20px;
+
+    padding: 10px 14px;
+
+    white-space: nowrap;
+
+    cursor: pointer;
+}
+
+.categoria.activa {
+
+    background: var(--negro);
+
+    color: white;
+}
+
+/* ========================================
+   PRODUCTOS
+======================================== */
+
+.productos {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 11px;
+}
+
+.producto {
+
+    border: 1px solid var(--borde);
+
+    border-radius: 18px;
+
+    padding: 13px;
+
+    background: white;
+}
+
+.imagen-producto {
+
+    height: 95px;
+
+    border-radius: 14px;
+
+    background: var(--naranja-suave);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 52px;
+}
+
+.producto h3 {
+
+    font-size: 15px;
+
+    margin: 10px 0 4px;
+}
+
+.descripcion {
+
+    color: var(--gris);
+
+    font-size: 12px;
+
+    min-height: 32px;
+}
+
+.precio-producto {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-top: 10px;
+}
+
+.agregar {
+
+    width: 39px;
+    height: 39px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    background: var(--naranja);
+
+    color: white;
+
+    font-size: 23px;
+
+    cursor: pointer;
+}
+
+/* ========================================
+   CARRITO
+======================================== */
+
+.item-carrito {
+
+    border: 1px solid var(--borde);
+
+    border-radius: 16px;
+
+    padding: 15px;
+
+    margin-bottom: 10px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+}
+
+.controles {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+}
+
+.controles button {
+
+    width: 33px;
+    height: 33px;
+
+    border: 1px solid var(--borde);
+
+    background: white;
+
+    border-radius: 9px;
+
+    cursor: pointer;
+}
+
+.total {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-top: 20px;
+
+    font-size: 22px;
+
+    font-weight: bold;
+}
+
+.boton-principal {
+
+    width: 100%;
+
+    border: none;
+
+    background: var(--naranja);
+
+    color: white;
+
+    padding: 15px;
+
+    border-radius: 14px;
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    margin-top: 15px;
+}
+
+/* ========================================
+   FIDELIDAD
+======================================== */
+
+.tarjeta-fidelidad {
+
+    width: 100%;
+
+    display: block;
+
+    border-radius: 18px;
+
+    margin-top: 15px;
+}
+
+.progreso {
+
+    border: 1px solid var(--borde);
+
+    border-radius: 18px;
+
+    padding: 20px;
+
+    margin-top: 15px;
+
+    text-align: center;
+}
+
+.numero-sellos {
+
+    color: var(--naranja);
+
+    font-size: 46px;
+
+    font-weight: bold;
+}
+
+.barra {
+
+    height: 14px;
+
+    background: #DDDDDD;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    margin: 20px 0;
+}
+
+.barra-interior {
+
+    width: 83.33%;
+
+    height: 100%;
+
+    background: var(--naranja);
+
+    transition: .5s;
+}
+
+.recompensa {
+
+    background: var(--naranja-suave);
+
+    border: 1px solid #FFD0AD;
+
+    border-radius: 17px;
+
+    padding: 18px;
+
+    margin-top: 15px;
+
+    text-align: center;
+}
+
+.desbloqueada {
+
+    display: none;
+
+    background: #E8F7ED;
+
+    color: var(--verde);
+
+    padding: 15px;
+
+    border-radius: 14px;
+
+    margin-top: 15px;
+
+    font-weight: bold;
+}
+
+/* ========================================
+   PEDIDOS
+======================================== */
+
+.pedido {
+
+    border: 1px solid var(--borde);
+
+    border-radius: 16px;
+
+    padding: 15px;
+
+    margin-bottom: 11px;
+}
+
+.cabecera-pedido {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 10px;
+}
+
+.estado {
+
+    display: inline-block;
+
+    color: var(--verde);
+
+    background: #E8F7ED;
+
+    padding: 5px 9px;
+
+    border-radius: 15px;
+
+    font-size: 10px;
+
+    font-weight: bold;
+}
+
+.detalle-pedido {
+
+    display: none;
+
+    border-top: 1px solid var(--borde);
+
+    margin-top: 12px;
+
+    padding-top: 12px;
+
+    color: var(--gris);
+
+    font-size: 13px;
+
+    line-height: 1.6;
+}
+
+.pedido.abierto .detalle-pedido {
+    display: block;
+}
+
+.ver-detalle {
+
+    border: 1px solid var(--borde);
+
+    background: white;
+
+    border-radius: 10px;
+
+    padding: 8px 12px;
+
+    cursor: pointer;
+}
+
+/* ========================================
+   PERFIL
+======================================== */
+
+.perfil {
+
+    border: 1px solid var(--borde);
+
+    border-radius: 20px;
+
+    padding: 22px;
+
+    text-align: center;
+
+    margin-top: 15px;
+}
+
+.perfil img {
+
+    width: 140px;
+
+    max-height: 120px;
+
+    object-fit: contain;
+}
+
+.cliente {
+
+    display: inline-block;
+
+    background: var(--naranja-suave);
+
+    color: var(--naranja-oscuro);
+
+    padding: 7px 13px;
+
+    border-radius: 20px;
+
+    font-weight: bold;
+
+    font-size: 12px;
+}
+
+/* ========================================
+   NAVEGACIÓN
+======================================== */
+
+.navegacion {
+
+    position: fixed;
+
+    bottom: 0;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 100%;
+
+    max-width: 520px;
+
+    height: 78px;
+
+    background: var(--negro);
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(5, 1fr);
+
+    z-index: 100;
+}
+
+.navegacion button {
+
+    border: none;
+
+    background: transparent;
+
+    color: white;
+
+    font-size: 10px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    position: relative;
+}
+
+.navegacion button.activo {
+    background: var(--naranja);
+}
+
+.navegacion button span {
+
+    display: block;
+
+    font-size: 20px;
+
+    margin-bottom: 3px;
+}
+
+.contador {
+
+    display: none;
+
+    position: absolute;
+
+    top: 6px;
+    right: 12px;
+
+    background: white;
+
+    color: var(--naranja);
+
+    width: 19px;
+    height: 19px;
+
+    border-radius: 50%;
+
+    line-height: 19px;
+
+    font-size: 10px;
+}
+
+/* ========================================
+   NOTIFICACIÓN
+======================================== */
+
+.toast {
+
+    position: fixed;
+
+    left: 50%;
+
+    bottom: 95px;
+
+    transform:
+        translateX(-50%)
+        translateY(20px);
+
+    width: calc(100% - 35px);
+
+    max-width: 460px;
+
+    background: #202020;
+
+    color: white;
+
+    padding: 14px 16px;
+
+    border-radius: 13px;
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    transition: .25s;
+
+    z-index: 200;
+}
+
+.toast.visible {
+
+    opacity: 1;
+
+    transform:
+        translateX(-50%)
+        translateY(0);
+}
+
+/* ========================================
+   MODAL
+======================================== */
+
+.modal {
+
+    display: none;
+
+    position: fixed;
+
+    inset: 0;
+
+    background: rgba(0,0,0,.55);
+
+    align-items: flex-end;
+
+    justify-content: center;
+
+    z-index: 300;
+}
+
+.modal.visible {
+    display: flex;
+}
+
+.modal-contenido {
+
+    width: 100%;
+
+    max-width: 520px;
+
+    background: white;
+
+    border-radius: 25px 25px 0 0;
+
+    padding: 27px 22px;
+
+    text-align: center;
+}
+
+.nota {
+
+    color: #999;
+
+    font-size: 10px;
+
+    text-align: center;
+
+    margin-top: 30px;
+
+    line-height: 1.5;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="app">
+
+<!-- ====================================
+     HEADER
+===================================== -->
+
+<header class="header">
+
+    <div class="marca">
+
+        <img
+        src="logo_little_caesars.png"
+        alt="Little Caesars">
+
+        <div>
+
+            <small>PROTOTIPO</small>
+
+            <br>
+
+            <strong>
+                LITTLE CAESARS
+            </strong>
+
+        </div>
+
+    </div>
+
+    <div class="avatar">
+        AH
+    </div>
+
+</header>
+
+
+<!-- ====================================
+     INICIO
+===================================== -->
+
+<section
+id="inicio"
+class="pantalla activa"
+>
+
+<div class="etiqueta">
+MI CUENTA
+</div>
+
+<h1>
+¡Hola, Andrey! 👋
+</h1>
+
+<p class="gris">
+¿Listo para tu próxima pizza?
+</p>
+
+
+<div class="banner">
+
+    <span class="badge">
+        FIDELIDAD 5/6
+    </span>
+
+    <h2>
+        Te falta solo 1 compra
+    </h2>
+
+    <p>
+        Completa tu tarjeta y desbloquea
+        tu próxima recompensa.
+    </p>
+
+    <button
+    class="boton-blanco"
+    onclick="mostrarPantalla('menu')"
+    >
+        Ver menú
+    </button>
+
+</div>
+
+
+<div class="estadisticas">
+
+    <div class="estadistica">
+
+        <div class="icono">
+            ⭐
+        </div>
+
+        <strong>
+            320
+        </strong>
+
+        <small>
+            Puntos
+        </small>
+
+    </div>
+
+
+    <div class="estadistica">
+
+        <div class="icono">
+            🍕
+        </div>
+
+        <strong id="sellosInicio">
+            5/6
+        </strong>
+
+        <small>
+            Sellos
+        </small>
+
+    </div>
+
+
+    <div class="estadistica">
+
+        <div class="icono">
+            🎁
+        </div>
+
+        <strong>
+            2
+        </strong>
+
+        <small>
+            Premios
+        </small>
+
+    </div>
+
+</div>
+
+
+<h2>
+🔥 Promoción destacada
+</h2>
+
+
+<div class="promocion">
+
+    <div>
+
+        <span class="badge">
+            SOLO MARTES
+        </span>
+
+        <p>
+
+            <strong>
+                Martes de Locura $79
+            </strong>
+
+            <br>
+
+            <small>
+                Promoción conceptual
+                del proyecto.
+            </small>
+
+        </p>
+
+    </div>
+
+    <div class="pizza-grande">
+        🍕
+    </div>
+
+</div>
+
+
+<h2>
+Tu último pedido
+</h2>
+
+
+<div class="pedido">
+
+    <div class="cabecera-pedido">
+
+        <div>
+
+            <strong>
+                #LC245678
+            </strong>
+
+            <p>
+                Pizza Pepperoni
+            </p>
+
+            <small class="gris">
+                Pizza Grande + Refresco 2L
+            </small>
+
+        </div>
+
+        <strong>
+            $248.00
+        </strong>
+
+    </div>
+
+</div>
+
+
+<p class="nota">
+
+Proyecto desarrollado exclusivamente con fines académicos.
+Las propuestas presentadas no han sido elaboradas,
+autorizadas ni validadas por la empresa y no representan
+su postura oficial.
+
+</p>
+
+</section>
+
+
+<!-- ====================================
+     MENÚ
+===================================== -->
+
+<section
+id="menu"
+class="pantalla"
+>
+
+<div class="etiqueta">
+ORDENA
+</div>
+
+<h1>
+Menú 🍕
+</h1>
+
+<p class="gris">
+Arma un pedido de demostración.
+</p>
+
+
+<div class="categorias">
+
+<button
+class="categoria activa"
+onclick="filtrar('todos',this)"
+>
+Todo
+</button>
+
+<button
+class="categoria"
+onclick="filtrar('pizza',this)"
+>
+Pizzas
+</button>
+
+<button
+class="categoria"
+onclick="filtrar('complemento',this)"
+>
+Complementos
+</button>
+
+<button
+class="categoria"
+onclick="filtrar('bebida',this)"
+>
+Bebidas
+</button>
+
+</div>
+
+
+<div
+class="productos"
+id="productos"
+>
+</div>
+
+</section>
+
+
+<!-- ====================================
+     CARRITO
+===================================== -->
+
+<section
+id="carrito"
+class="pantalla"
+>
+
+<div class="etiqueta">
+PEDIDO
+</div>
+
+<h1>
+Tu carrito 🛒
+</h1>
+
+<p class="gris">
+Modifica las cantidades antes de realizar
+tu pedido de demostración.
+</p>
+
+<div id="listaCarrito">
+</div>
+
+<div id="resumenCarrito">
+</div>
+
+</section>
+
+
+<!-- ====================================
+     FIDELIDAD
+===================================== -->
+
+<section
+id="fidelidad"
+class="pantalla"
+>
+
+<div class="etiqueta">
+BENEFICIOS
+</div>
+
+<h1>
+Fidelidad ⭐
+</h1>
+
+<p class="gris">
+Cada compra te acerca a una recompensa.
+</p>
+
+
+<img
+src="tarjeta_fidelidad.png"
+class="tarjeta-fidelidad"
+alt="Tarjeta de fidelidad"
+>
+
+
+<div class="progreso">
+
+    <div
+    class="numero-sellos"
+    id="numeroSellos"
+    >
+        5/6
+    </div>
+
+    <span class="gris">
+        sellos acumulados
+    </span>
+
+
+    <div class="barra">
+
+        <div
+        class="barra-interior"
+        id="barraSellos"
+        >
+        </div>
+
+    </div>
+
+
+    <strong id="mensajeSellos">
+        ¡Solo falta 1 compra!
+    </strong>
+
+
+    <div
+    class="desbloqueada"
+    id="recompensaDesbloqueada"
+    >
+
+        🎉 ¡RECOMPENSA DESBLOQUEADA!
+
+        <br><br>
+
+        🍕 Pizza + Crazy Bread®
+
+    </div>
+
+</div>
+
+
+<div class="recompensa">
+
+    <div style="font-size:35px">
+        🎁
+    </div>
+
+    <h3>
+        Próxima recompensa
+    </h3>
+
+    <p>
+        Pizza Hot-N-Ready®
+        + Crazy Bread®
+    </p>
+
+</div>
+
+</section>
+
+
+<!-- ====================================
+     PERFIL
+===================================== -->
+
+<section
+id="perfil"
+class="pantalla"
+>
+
+<div class="etiqueta">
+CUENTA
+</div>
+
+<h1>
+Mi perfil
+</h1>
+
+
+<div class="perfil">
+
+    <img
+    src="logo_little_caesars.png"
+    alt="Little Caesars"
+    >
+
+    <h2>
+        Andrey Hernández
+    </h2>
+
+    <p class="gris">
+        andrey@email.com
+    </p>
+
+    <span class="cliente">
+        ⭐ CLIENTE FIEL
+    </span>
+
+</div>
+
+
+<div class="estadisticas">
+
+    <div class="estadistica">
+
+        <strong>
+            320
+        </strong>
+
+        <small>
+            Puntos
+        </small>
+
+    </div>
+
+    <div class="estadistica">
+
+        <strong id="sellosPerfil">
+            5/6
+        </strong>
+
+        <small>
+            Sellos
+        </small>
+
+    </div>
+
+    <div class="estadistica">
+
+        <strong>
+            2
+        </strong>
+
+        <small>
+            Premios
+        </small>
+
+    </div>
+
+</div>
+
+
+<h2>
+Historial de pedidos
+</h2>
+
+
+<div class="pedido">
+
+    <div class="cabecera-pedido">
+
+        <div>
+
+            <strong>
+                #LC245678
+            </strong>
+
+            <p>
+                Pizza Pepperoni
+            </p>
+
+        </div>
+
+        <div>
+
+            <span class="estado">
+                Entregado
+            </span>
+
+            <p>
+                <strong>
+                    $248.00
+                </strong>
+            </p>
+
+        </div>
+
+    </div>
+
+    <button
+    class="ver-detalle"
+    onclick="detallePedido(this)"
+    >
+        Ver detalle
+    </button>
+
+    <div class="detalle-pedido">
+
+        Fecha: 04 sep. 2026
+
+        <br>
+
+        Pizza Grande + Refresco 2L
+
+        <br>
+
+        Estado: entregado correctamente.
+
+        <br>
+
+        ⭐ Puntos acreditados.
+
+    </div>
+
+</div>
+
+
+<div class="pedido">
+
+    <div class="cabecera-pedido">
+
+        <div>
+
+            <strong>
+                #LC243912
+            </strong>
+
+            <p>
+                Crazy Bread®
+            </p>
+
+        </div>
+
+        <div>
+
+            <span class="estado">
+                Entregado
+            </span>
+
+            <p>
+                <strong>
+                    $129.00
+                </strong>
+            </p>
+
+        </div>
+
+    </div>
+
+    <button
+    class="ver-detalle"
+    onclick="detallePedido(this)"
+    >
+        Ver detalle
+    </button>
+
+    <div class="detalle-pedido">
+
+        Fecha: 28 ago. 2026
+
+        <br>
+
+        8 piezas + Salsa Marinara
+
+        <br>
+
+        Estado: entregado correctamente.
+
+    </div>
+
+</div>
+
+
+<div class="pedido">
+
+    <div class="cabecera-pedido">
+
+        <div>
+
+            <strong>
+                #LC241556
+            </strong>
+
+            <p>
+                Pizza Hawaiana
+            </p>
+
+        </div>
+
+        <div>
+
+            <span class="estado">
+                Entregado
+            </span>
+
+            <p>
+                <strong>
+                    $238.00
+                </strong>
+            </p>
+
+        </div>
+
+    </div>
+
+    <button
+    class="ver-detalle"
+    onclick="detallePedido(this)"
+    >
+        Ver detalle
+    </button>
+
+    <div class="detalle-pedido">
+
+        Fecha: 20 ago. 2026
+
+        <br>
+
+        Pizza Grande + Refresco 2L
+
+        <br>
+
+        Estado: entregado correctamente.
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- ====================================
+     NAVEGACIÓN
+===================================== -->
+
+<nav class="navegacion">
+
+<button
+class="activo"
+data-pantalla="inicio"
+onclick="mostrarPantalla('inicio')"
+>
+
+<span>
+🏠
+</span>
+
+Inicio
+
+</button>
+
+
+<button
+data-pantalla="menu"
+onclick="mostrarPantalla('menu')"
+>
+
+<span>
+🍕
+</span>
+
+Menú
+
+</button>
+
+
+<button
+data-pantalla="carrito"
+onclick="mostrarPantalla('carrito')"
+>
+
+<span>
+🛒
+</span>
+
+Carrito
+
+<div
+class="contador"
+id="contadorCarrito"
+>
+0
+</div>
+
+</button>
+
+
+<button
+data-pantalla="fidelidad"
+onclick="mostrarPantalla('fidelidad')"
+>
+
+<span>
+⭐
+</span>
+
+Fidelidad
+
+</button>
+
+
+<button
+data-pantalla="perfil"
+onclick="mostrarPantalla('perfil')"
+>
+
+<span>
+👤
+</span>
+
+Perfil
+
+</button>
+
+</nav>
+
+
+<!-- ====================================
+     TOAST
+===================================== -->
+
+<div
+class="toast"
+id="toast"
+>
+Producto agregado
+</div>
+
+
+<!-- ====================================
+     MODAL COMPRA
+===================================== -->
+
+<div
+class="modal"
+id="modal"
+>
+
+<div class="modal-contenido">
+
+    <div style="font-size:60px">
+        🍕
+    </div>
+
+    <h1>
+        ¡Pedido realizado!
+    </h1>
+
+    <p class="gris">
+
+        Tu pedido de demostración
+        se realizó correctamente.
+
+    </p>
+
+    <p>
+
+        ⭐ Ganaste tu sexto sello.
+
+    </p>
+
+    <p>
+
+        🎁 ¡Desbloqueaste una recompensa!
+
+    </p>
+
+    <button
+    class="boton-principal"
+    onclick="cerrarModal()"
+    >
+        Ver mi recompensa
+    </button>
+
+</div>
+
+</div>
+
+</div>
+
+
+<script>
+
+/* ========================================
+   PRODUCTOS
+======================================== */
+
+const productos = [
+
+{
+    id: 1,
+    nombre: "Pepperoni",
+    descripcion: "Pizza grande clásica",
+    precio: 129,
+    categoria: "pizza",
+    icono: "🍕"
+},
+
+{
+    id: 2,
+    nombre: "Hawaiana",
+    descripcion: "Jamón y piña",
+    precio: 159,
+    categoria: "pizza",
+    icono: "🍕"
+},
+
+{
+    id: 3,
+    nombre: "3 Meat Treat",
+    descripcion: "Pepperoni, salchicha y tocino",
+    precio: 189,
+    categoria: "pizza",
+    icono: "🍕"
+},
+
+{
+    id: 4,
+    nombre: "Crazy Bread®",
+    descripcion: "8 piezas + salsa marinara",
+    precio: 79,
+    categoria: "complemento",
+    icono: "🥖"
+},
+
+{
+    id: 5,
+    nombre: "Italian Cheese Bread",
+    descripcion: "Pan horneado con queso",
+    precio: 89,
+    categoria: "complemento",
+    icono: "🧀"
+},
+
+{
+    id: 6,
+    nombre: "Refresco 2L",
+    descripcion: "Bebida para compartir",
+    precio: 55,
+    categoria: "bebida",
+    icono: "🥤"
+}
+
+];
+
+
+let carrito = {};
+
+let sellos = 5;
+
+
+/* ========================================
+   CAMBIAR PANTALLA
+======================================== */
+
+function mostrarPantalla(id) {
+
+    document
+    .querySelectorAll(".pantalla")
+    .forEach(pantalla => {
+
+        pantalla.classList.remove("activa");
+
+    });
+
+
+    document
+    .getElementById(id)
+    .classList.add("activa");
+
+
+    document
+    .querySelectorAll(
+        ".navegacion button"
+    )
+    .forEach(boton => {
+
+        boton.classList.remove("activo");
+
+        if (
+            boton.dataset.pantalla === id
+        ) {
+
+            boton.classList.add("activo");
+
+        }
+
+    });
+
+
+    if (id === "carrito") {
+
+        mostrarCarrito();
+
+    }
+
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+
+}
+
+
+/* ========================================
+   MOSTRAR PRODUCTOS
+======================================== */
+
+function mostrarProductos(
+    categoria = "todos"
+) {
+
+    const contenedor =
+        document.getElementById(
+            "productos"
+        );
+
+
+    let lista = productos;
+
+
+    if (categoria !== "todos") {
+
+        lista = productos.filter(
+            producto =>
+            producto.categoria === categoria
+        );
+
+    }
+
+
+    contenedor.innerHTML =
+    lista.map(producto => `
+
+        <div class="producto">
+
+            <div class="imagen-producto">
+
+                ${producto.icono}
+
+            </div>
+
+            <h3>
+                ${producto.nombre}
+            </h3>
+
+            <div class="descripcion">
+
+                ${producto.descripcion}
+
+            </div>
+
+            <div class="precio-producto">
+
+                <strong>
+                    $${producto.precio}.00
+                </strong>
+
+                <button
+                class="agregar"
+                onclick="agregarProducto(
+                    ${producto.id}
+                )"
+                >
+                    +
+                </button>
+
+            </div>
+
+        </div>
+
+    `).join("");
+
+}
+
+
+/* ========================================
+   FILTROS
+======================================== */
+
+function filtrar(
+    categoria,
+    boton
+) {
+
+    document
+    .querySelectorAll(".categoria")
+    .forEach(elemento => {
+
+        elemento.classList.remove(
+            "activa"
+        );
+
+    });
+
+
+    boton.classList.add(
+        "activa"
+    );
+
+
+    mostrarProductos(
+        categoria
+    );
+
+}
+
+
+/* ========================================
+   AGREGAR PRODUCTO
+======================================== */
+
+function agregarProducto(id) {
+
+    if (!carrito[id]) {
+
+        carrito[id] = 0;
+
+    }
+
+    carrito[id]++;
+
+
+    actualizarContador();
+
+
+    const producto =
+        productos.find(
+            producto =>
+            producto.id === id
+        );
+
+
+    mostrarToast(
+        producto.nombre +
+        " agregado al carrito 🍕"
+    );
+
+}
+
+
+/* ========================================
+   CONTADOR
+======================================== */
+
+function actualizarContador() {
+
+    const cantidad =
+        Object.values(carrito)
+        .reduce(
+            (total, numero) =>
+            total + numero,
+            0
+        );
+
+
+    const contador =
+        document.getElementById(
+            "contadorCarrito"
+        );
+
+
+    contador.textContent =
+        cantidad;
+
+
+    if (cantidad > 0) {
+
+        contador.style.display =
+            "block";
+
+    }
+
+    else {
+
+        contador.style.display =
+            "none";
+
+    }
+
+}
+
+
+/* ========================================
+   CARRITO
+======================================== */
+
+function mostrarCarrito() {
+
+    const lista =
+        document.getElementById(
+            "listaCarrito"
+        );
+
+    const resumen =
+        document.getElementById(
+            "resumenCarrito"
+        );
+
+
+    const elementos =
+        Object.entries(carrito);
+
+
+    if (elementos.length === 0) {
+
+        lista.innerHTML = `
+
+            <div
+            style="
+            text-align:center;
+            padding:45px 15px;
+            "
+            >
+
+                <div
+                style="
+                font-size:60px;
+                "
+                >
+                    🛒
+                </div>
+
+                <h2>
+                    Tu carrito está vacío
+                </h2>
+
+                <p class="gris">
+
+                    Agrega algo rico
+                    desde nuestro menú.
+
+                </p>
+
+                <button
+                class="boton-principal"
+                onclick="
+                mostrarPantalla('menu')
+                "
+                >
+                    Ver menú
+                </button>
+
+            </div>
+
+        `;
+
+
+        resumen.innerHTML = "";
+
+        return;
+
+    }
+
+
+    let total = 0;
+
+
+    lista.innerHTML =
+    elementos.map(
+        ([id, cantidad]) => {
+
+        const producto =
+            productos.find(
+                producto =>
+                producto.id == id
+            );
+
+
+        total +=
+            producto.precio *
+            cantidad;
+
+
+        return `
+
+        <div class="item-carrito">
+
+            <div>
+
+                <strong>
+                    ${producto.nombre}
+                </strong>
+
+                <br>
+
+                <small class="gris">
+
+                    $${producto.precio}.00
+                    c/u
+
+                </small>
+
+            </div>
+
+
+            <div class="controles">
+
+                <button
+                onclick="
+                cambiarCantidad(
+                    ${id},
+                    -1
+                )
+                "
+                >
+                    −
+                </button>
+
+                <strong>
+                    ${cantidad}
+                </strong>
+
+                <button
+                onclick="
+                cambiarCantidad(
+                    ${id},
+                    1
+                )
+                "
+                >
+                    +
+                </button>
+
+            </div>
+
+        </div>
+
+        `;
+
+    }).join("");
+
+
+    resumen.innerHTML = `
+
+        <div class="total">
+
+            <span>
+                Total
+            </span>
+
+            <span>
+                $${total}.00
+            </span>
+
+        </div>
+
+
+        <button
+        class="boton-principal"
+        onclick="realizarPedido()"
+        >
+
+            Realizar pedido
+            de demostración
+
+        </button>
+
+    `;
+
+}
+
+
+/* ========================================
+   CAMBIAR CANTIDAD
+======================================== */
+
+function cambiarCantidad(
+    id,
+    cambio
+) {
+
+    carrito[id] += cambio;
+
+
+    if (carrito[id] <= 0) {
+
+        delete carrito[id];
+
+    }
+
+
+    actualizarContador();
+
+    mostrarCarrito();
+
+}
+
+
+/* ========================================
+   REALIZAR PEDIDO
+======================================== */
+
+function realizarPedido() {
+
+    if (
+        Object.keys(carrito).length === 0
+    ) {
+
+        return;
+
+    }
+
+
+    carrito = {};
+
+
+    actualizarContador();
+
+
+    sellos = 6;
+
+
+    actualizarFidelidad();
+
+
+    document
+    .getElementById("modal")
+    .classList.add("visible");
+
+}
+
+
+/* ========================================
+   CERRAR MODAL
+======================================== */
+
+function cerrarModal() {
+
+    document
+    .getElementById("modal")
+    .classList.remove("visible");
+
+
+    mostrarPantalla(
+        "fidelidad"
+    );
+
+}
+
+
+/* ========================================
+   FIDELIDAD
+======================================== */
+
+function actualizarFidelidad() {
+
+    const texto =
+        sellos + "/6";
+
+
+    document
+    .getElementById(
+        "numeroSellos"
+    )
+    .textContent = texto;
+
+
+    document
+    .getElementById(
+        "sellosInicio"
+    )
+    .textContent = texto;
+
+
+    document
+    .getElementById(
+        "sellosPerfil"
+    )
+    .textContent = texto;
+
+
+    const porcentaje =
+        (sellos / 6) * 100;
+
+
+    document
+    .getElementById(
+        "barraSellos"
+    )
+    .style.width =
+        porcentaje + "%";
+
+
+    if (sellos >= 6) {
+
+        document
+        .getElementById(
+            "mensajeSellos"
+        )
+        .textContent =
+            "¡Tarjeta completada!";
+
+
+        document
+        .getElementById(
+            "recompensaDesbloqueada"
+        )
+        .style.display =
+            "block";
+
+    }
+
+}
+
+
+/* ========================================
+   NOTIFICACIÓN
+======================================== */
+
+let temporizadorToast;
+
+
+function mostrarToast(texto) {
+
+    const toast =
+        document.getElementById(
+            "toast"
+        );
+
+
+    toast.textContent =
+        texto;
+
+
+    toast.classList.add(
+        "visible"
+    );
+
+
+    clearTimeout(
+        temporizadorToast
+    );
+
+
+    temporizadorToast =
+        setTimeout(() => {
+
+            toast.classList.remove(
+                "visible"
+            );
+
+        }, 1800);
+
+}
+
+
+/* ========================================
+   DETALLE PEDIDO
+======================================== */
+
+function detallePedido(boton) {
+
+    const pedido =
+        boton.closest(
+            ".pedido"
+        );
+
+
+    pedido.classList.toggle(
+        "abierto"
+    );
+
+
+    if (
+        pedido.classList.contains(
+            "abierto"
+        )
+    ) {
+
+        boton.textContent =
+            "Ocultar detalle";
+
+    }
+
+    else {
+
+        boton.textContent =
+            "Ver detalle";
+
+    }
+
+}
+
+
+/* ========================================
+   INICIAR
+======================================== */
+
+mostrarProductos();
+
+actualizarContador();
+
+actualizarFidelidad();
+
+</script>
+
+</body>
+</html>
